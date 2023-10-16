@@ -5,13 +5,28 @@ import React,{useState} from "react";
 const page = () =>{
   const [title, setTitle] = useState("");
   const [discription, setDiscription] = useState("");
+  const [mainTask ,setMainTask] = useState([]);
   const submitHandler = (e) =>{
-    e.preventDefult()
-    console.log(title);
-    console.log(discription);
+    e.preventDefault()
+    setMainTask([...mainTask,{title,discription}])
+    console.log(mainTask);
     setTitle("")
     setDiscription("")
   }
+  let renderTask = <h2>No Task Here</h2>
+  if(mainTask.length > 0){
+    renderTask = mainTask.map((t,i)=>{
+      return (
+        <li>
+          <div className="flex justify-between font-gray mx-64">
+            <h4 className="text-2xl font-semibold">{t.title}</h4>
+            <h5 className="text-xl">{t.discription}</h5>
+          </div>
+        </li>
+      );
+    })
+  }
+
   return (
     <>
     <div className="w-full h-screen block justify-center items-center">
@@ -37,6 +52,12 @@ const page = () =>{
         />
         <button className="px-4 bg-slate-800 rounded mx-3">Add Task</button>
       </form>
+      <hr className="my-10"/>
+      <div className="p-12 mx-64">
+        <ul>
+          {renderTask}
+        </ul>
+      </div>
     </div>
     </>
   )
