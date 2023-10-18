@@ -8,3 +8,5 @@ class myapp extends Component {
 }
  
 export default myapp;
+
+// class vs functional components
