@@ -17,12 +17,12 @@ const page = () =>{
   if(mainTask.length > 0){
     renderTask = mainTask.map((t,i)=>{
       return (
-        <li>
+        <li className="mb-4" key={i}>
           <div className="flex justify-between font-gray mx-64">
             <h4 className="text-2xl font-semibold">{t.title}</h4>
             <h5 className="text-xl">{t.discription}</h5>
+            <button className="bg-red-600 py-2 px-4 rounded ">Delete</button>
           </div>
-          <button></button>
         </li>
       );
     })
