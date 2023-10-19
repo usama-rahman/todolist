@@ -22,6 +22,7 @@ const page = () =>{
             <h4 className="text-2xl font-semibold">{t.title}</h4>
             <h5 className="text-xl">{t.discription}</h5>
           </div>
+          <button></button>
         </li>
       );
     })
