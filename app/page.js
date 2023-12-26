@@ -1,6 +1,5 @@
 "use client";
 
-import { Cagliostro, Climate_Crisis } from "next/font/google";
 import React, { useState } from "react";
 
 const page = () => {
