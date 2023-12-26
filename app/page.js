@@ -15,12 +15,15 @@ const page = () => {
     setTitle("");
     setDiscription("");
   };
+
   const deletHandeler = (i) => {
     let copyTask = [...mainTask];
     copyTask.splice(i, 1);
     setMainTask(copyTask);
   };
+
   let renderTask = <h2>No Task Here</h2>;
+
   if (mainTask.length > 0) {
     renderTask = mainTask.map((t, i) => {
       return (
